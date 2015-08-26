@@ -7,8 +7,9 @@ sed -i "s?https://proxy.jmap.io?http://$IP?g" ./bin/server.pl ./htdocs/landing.h
 # Or can be occurrence of previous docker IP
 sed -i "s?http://172[^/]*?http://$IP?g" ./bin/server.pl ./htdocs/landing.html ./JMAP/API.pm ./JMAP/DB.pm
 
+export jmaphost=$IP
+
 service nginx start
 perl ./bin/server.pl &
-#perl ./bin/syncserver.pl &
 perl ./bin/apiendpoint.pl
 
