@@ -421,7 +421,7 @@ sub home_page {
 </tr>
 EOF
     foreach my $key (sort keys %ids) {
-      $sessiontext .= qq{<tr>\n <td><a href="https://$ENV{jmaphost}/jmap/$key/">$ids{$key}</a>\n </td>\n</tr>\n};
+      $sessiontext .= qq{<tr>\n <td><a href="jmap/$key/">$ids{$key}</a>\n </td>\n</tr>\n};
     }
     $sessiontext .= "</table>";
   }
